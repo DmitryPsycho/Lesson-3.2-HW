@@ -56,9 +56,9 @@ extension ParseViewController {
             }
             
             do {
-                let results = try JSONDecoder().decode(RandomUser.self, from: data)
+                let randomUser = try JSONDecoder().decode(RandomUser.self, from: data)
                 self?.successAlert()
-                print(results)
+                print(randomUser)
             } catch let error {
                 self?.failedAlert()
                 print(error)
