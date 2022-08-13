@@ -17,6 +17,8 @@ struct Results: Decodable {
     let name: Name
     let login: Login
     let dob: DateOfBirth
+    let picture: Picture
+    let location: Location
 }
 
 struct Name: Decodable {
@@ -35,6 +37,12 @@ struct DateOfBirth: Decodable {
     let age: Int
 }
 
+struct Picture: Decodable {
+    let large: String
+    let medium: String
+    let thumbnail: String
+}
+
 struct Location: Decodable {
     let timezone: Timezone
     let state: String
@@ -45,3 +53,5 @@ struct Timezone: Decodable {
     let offset: String
     let description: String
 }
+
+

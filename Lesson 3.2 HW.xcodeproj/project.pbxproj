@@ -9,25 +9,29 @@
 /* Begin PBXBuildFile section */
 		401A3B5828A18C4B003C346A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 401A3B5728A18C4B003C346A /* AppDelegate.swift */; };
 		401A3B5A28A18C4B003C346A /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 401A3B5928A18C4B003C346A /* SceneDelegate.swift */; };
-		401A3B5C28A18C4B003C346A /* ParseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 401A3B5B28A18C4B003C346A /* ParseViewController.swift */; };
+		401A3B5C28A18C4B003C346A /* RandomUserTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 401A3B5B28A18C4B003C346A /* RandomUserTableViewController.swift */; };
 		401A3B5F28A18C4B003C346A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 401A3B5D28A18C4B003C346A /* Main.storyboard */; };
 		401A3B6128A18C4D003C346A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 401A3B6028A18C4D003C346A /* Assets.xcassets */; };
 		401A3B6428A18C4D003C346A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 401A3B6228A18C4D003C346A /* LaunchScreen.storyboard */; };
 		401A3B6C28A1922F003C346A /* RandomUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 401A3B6B28A1922F003C346A /* RandomUser.swift */; };
-		401A3B7328A1AAA5003C346A /* Link.swift in Sources */ = {isa = PBXBuildFile; fileRef = 401A3B7228A1AAA5003C346A /* Link.swift */; };
+		40271ACD28A7E6A600D7C01D /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40271ACC28A7E6A600D7C01D /* NetworkManager.swift */; };
+		40271AD028A8104200D7C01D /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40271ACF28A8104200D7C01D /* MainViewController.swift */; };
+		40271AD228A827B200D7C01D /* UserCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40271AD128A827B200D7C01D /* UserCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		401A3B5428A18C4B003C346A /* Lesson 3.2 HW.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Lesson 3.2 HW.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		401A3B5728A18C4B003C346A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		401A3B5928A18C4B003C346A /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		401A3B5B28A18C4B003C346A /* ParseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParseViewController.swift; sourceTree = "<group>"; };
+		401A3B5B28A18C4B003C346A /* RandomUserTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RandomUserTableViewController.swift; sourceTree = "<group>"; };
 		401A3B5E28A18C4B003C346A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		401A3B6028A18C4D003C346A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		401A3B6328A18C4D003C346A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		401A3B6528A18C4D003C346A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		401A3B6B28A1922F003C346A /* RandomUser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RandomUser.swift; sourceTree = "<group>"; };
-		401A3B7228A1AAA5003C346A /* Link.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Link.swift; sourceTree = "<group>"; };
+		40271ACC28A7E6A600D7C01D /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
+		40271ACF28A8104200D7C01D /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
+		40271AD128A827B200D7C01D /* UserCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -61,8 +65,8 @@
 			isa = PBXGroup;
 			children = (
 				401A3B6D28A1AA1D003C346A /* ViewControllers */,
-				401A3B7428A1AAB3003C346A /* Network */,
 				401A3B7128A1AA7F003C346A /* Models */,
+				40271ACE28A7E6C000D7C01D /* Network */,
 				401A3B7028A1AA6A003C346A /* App */,
 				401A3B6E28A1AA45003C346A /* Storyboards */,
 				401A3B6F28A1AA55003C346A /* Resources  */,
@@ -73,7 +77,9 @@
 		401A3B6D28A1AA1D003C346A /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
-				401A3B5B28A18C4B003C346A /* ParseViewController.swift */,
+				401A3B5B28A18C4B003C346A /* RandomUserTableViewController.swift */,
+				40271AD128A827B200D7C01D /* UserCell.swift */,
+				40271ACF28A8104200D7C01D /* MainViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -113,10 +119,10 @@
 			path = Models;
 			sourceTree = "<group>";
 		};
-		401A3B7428A1AAB3003C346A /* Network */ = {
+		40271ACE28A7E6C000D7C01D /* Network */ = {
 			isa = PBXGroup;
 			children = (
-				401A3B7228A1AAA5003C346A /* Link.swift */,
+				40271ACC28A7E6A600D7C01D /* NetworkManager.swift */,
 			);
 			path = Network;
 			sourceTree = "<group>";
@@ -192,9 +198,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				401A3B7328A1AAA5003C346A /* Link.swift in Sources */,
-				401A3B5C28A18C4B003C346A /* ParseViewController.swift in Sources */,
+				40271ACD28A7E6A600D7C01D /* NetworkManager.swift in Sources */,
+				401A3B5C28A18C4B003C346A /* RandomUserTableViewController.swift in Sources */,
 				401A3B5828A18C4B003C346A /* AppDelegate.swift in Sources */,
+				40271AD028A8104200D7C01D /* MainViewController.swift in Sources */,
+				40271AD228A827B200D7C01D /* UserCell.swift in Sources */,
 				401A3B5A28A18C4B003C346A /* SceneDelegate.swift in Sources */,
 				401A3B6C28A1922F003C346A /* RandomUser.swift in Sources */,
 			);
