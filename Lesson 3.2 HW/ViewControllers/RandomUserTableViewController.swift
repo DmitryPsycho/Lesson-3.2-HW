@@ -5,15 +5,21 @@
 //  Created by Psycho on 08.08.2022.
 //
 
+
+/* Добрый день, что я делаю не так? Хотел сделать логинскрин со всеми вытекающими.
+ Начал с экарана, с данными юзера. В итоге долгих страданий, решил сделать точь в точь как
+ вы показывали на уроке. Джсон парсится, никаких ошибок не выскакивает. Я уверен, что
+ ошибка наитупейшая xD но я не могу ее найти.
+ */
 import UIKit
 
 class RandomUserViewController: UITableViewController {
     
-   private var randomUser: [Results] = []
+    private var randomUser: [Results] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        tableView.rowHeight = 200
+        tableView.rowHeight = 100
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {

@@ -13,9 +13,10 @@ class UserCell: UITableViewCell {
     @IBOutlet var userFirstName: UILabel!
     
     func configureCell(with userResults: Results) {
+        
         userFirstName.text = userResults.name.first
         
-        NetworkManager.shared.fetchPicture(from: userResults.picture.large) { [weak self] result in
+        NetworkManager.shared.fetchPicture(from: userResults.picture.thumbnail) { [weak self] result in
             switch result {
             case .success(let imageData):
                 self?.userPicture.image = UIImage(data: imageData)

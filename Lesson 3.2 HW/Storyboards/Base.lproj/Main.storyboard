@@ -11,6 +11,7 @@
         <!--Main View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
                 <viewController id="BYZ-38-t0r" customClass="MainViewController" customModule="Lesson_3_2_HW" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
@@ -26,13 +27,13 @@
                         </barButtonItem>
                     </navigationItem>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="944.92753623188412" y="69.642857142857139"/>
         </scene>
         <!--Random User View Controller-->
         <scene sceneID="cIs-RN-qgb">
             <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="fyl-Iu-0as" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
                 <tableViewController id="RQi-CT-7Gd" customClass="RandomUserViewController" customModule="Lesson_3_2_HW" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" id="3Ud-KM-Ihr">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
@@ -46,20 +47,29 @@
                                     <rect key="frame" x="0.0" y="0.0" width="414" height="186"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="72t-Di-mHy">
-                                            <rect key="frame" x="186" y="82.5" width="42" height="21"/>
-                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                            <nil key="textColor"/>
-                                            <nil key="highlightedColor"/>
-                                        </label>
+                                        <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" alignment="center" spacing="100" translatesAutoresizingMaskIntoConstraints="NO" id="2CH-iD-5RR">
+                                            <rect key="frame" x="16" y="29" width="382" height="128"/>
+                                            <subviews>
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="RdO-HZ-Jlb">
+                                                    <rect key="frame" x="0.0" y="0.0" width="141" height="128"/>
+                                                </imageView>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="72t-Di-mHy">
+                                                    <rect key="frame" x="241" y="54" width="141" height="20.5"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                        </stackView>
                                     </subviews>
                                     <constraints>
-                                        <constraint firstItem="72t-Di-mHy" firstAttribute="centerX" secondItem="3UC-fZ-p6A" secondAttribute="centerX" id="FYg-RB-T8H"/>
-                                        <constraint firstItem="72t-Di-mHy" firstAttribute="centerY" secondItem="3UC-fZ-p6A" secondAttribute="centerY" id="JGh-nZ-g9w"/>
+                                        <constraint firstItem="2CH-iD-5RR" firstAttribute="centerY" secondItem="3UC-fZ-p6A" secondAttribute="centerY" id="WDz-2Z-0yJ"/>
+                                        <constraint firstItem="2CH-iD-5RR" firstAttribute="centerX" secondItem="3UC-fZ-p6A" secondAttribute="centerX" id="syK-fM-8Xz"/>
                                     </constraints>
                                 </tableViewCellContentView>
                                 <connections>
                                     <outlet property="userFirstName" destination="72t-Di-mHy" id="C0H-MF-vgB"/>
+                                    <outlet property="userPicture" destination="RdO-HZ-Jlb" id="lMa-TO-0nq"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -70,13 +80,13 @@
                     </tableView>
                     <navigationItem key="navigationItem" id="Arn-sA-5ev"/>
                 </tableViewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="fyl-Iu-0as" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1739.1304347826087" y="69.642857142857139"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="jdP-UW-Xbg">
             <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="1Pv-TC-PkI" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="67Q-PF-Bo7" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="yw6-9z-sKU">
@@ -88,7 +98,6 @@
                         <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="bk6-Bv-4qL"/>
                     </connections>
                 </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="1Pv-TC-PkI" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="71" y="70"/>
         </scene>
