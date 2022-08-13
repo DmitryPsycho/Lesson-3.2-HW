@@ -5,12 +5,8 @@
 //  Created by Psycho on 08.08.2022.
 //
 
+// Над визуалом не успел поработать, был огромный затык с отображением данных. Не знаю проблема была в апи или моих руках xD К следующему уроку обещаю проработать этот момент)
 
-/* Добрый день, что я делаю не так? Хотел сделать логинскрин со всеми вытекающими.
- Начал с экарана, с данными юзера. В итоге долгих страданий, решил сделать точь в точь как
- вы показывали на уроке. Джсон парсится, никаких ошибок не выскакивает. Я уверен, что
- ошибка наитупейшая xD но я не могу ее найти.
- */
 import UIKit
 
 class RandomUserViewController: UITableViewController {
@@ -19,7 +15,10 @@ class RandomUserViewController: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        tableView.rowHeight = 100
+        tableView.rowHeight = 500
+    }
+    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        randomUser.count
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -33,21 +32,20 @@ class RandomUserViewController: UITableViewController {
         }
         
         let user = randomUser[indexPath.row]
-        cell.configureCell(with: user)
+        cell.configure(with: user)
         
         return cell
     }
 }
 
 extension RandomUserViewController {
-    
     func fetchRandomUser() {
         NetworkManager.shared.fetch(RandomUser.self, from: NetworkManager.url) { [weak self] result in
             switch result {
             case .success(let user):
                 self?.randomUser = user.results
                 self?.tableView.reloadData()
-                print(user.results)
+                print(user)
             case .failure(let error):
                 print(error)
             }

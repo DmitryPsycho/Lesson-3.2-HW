@@ -10,13 +10,23 @@ import UIKit
 class UserCell: UITableViewCell {
     
     @IBOutlet var userPicture: UIImageView!
-    @IBOutlet var userFirstName: UILabel!
+    @IBOutlet var userName: UILabel!
+    @IBOutlet var location: UILabel!
+    @IBOutlet var timezone: UILabel!
+    @IBOutlet var dateOfBirth: UILabel!
     
-    func configureCell(with userResults: Results) {
+    func configure(with userResults: Results) {
+        userPicture?.layer.cornerRadius = (userPicture?.frame.size.width ?? 0.0) / 2
+        userPicture?.clipsToBounds = true
+        userPicture?.layer.borderWidth = 3.0
+        userPicture?.layer.borderColor = UIColor.white.cgColor
         
-        userFirstName.text = userResults.name.first
+        userName.text = "\(userResults.name.title) \(userResults.name.first) \(userResults.name.last)"
+        location.text = "\(userResults.location.state) \(userResults.location.city)"
+        timezone.text = "\(userResults.location.timezone.description) \(userResults.location.timezone.offset)"
+        dateOfBirth.text = userResults.dob.date
         
-        NetworkManager.shared.fetchPicture(from: userResults.picture.thumbnail) { [weak self] result in
+        NetworkManager.shared.fetchPicture(from: userResults.picture.large) { [weak self] result in
             switch result {
             case .success(let imageData):
                 self?.userPicture.image = UIImage(data: imageData)
@@ -24,7 +34,5 @@ class UserCell: UITableViewCell {
                 print(error)
             }
         }
-
     }
-
 }
