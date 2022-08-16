@@ -6,7 +6,11 @@
 //
 
 import Foundation
+import Alamofire
 
+enum Link: String {
+    case randomUserApi = "https://randomuser.me/api/"
+}
 enum NetworkError: Error {
     case invalidURL
     case noData
@@ -16,8 +20,6 @@ enum NetworkError: Error {
 class NetworkManager {
     
     static let shared = NetworkManager()
-    
-    static let url = "https://randomuser.me/api/"
     
     private init() {}
     
@@ -37,24 +39,17 @@ class NetworkManager {
         }
     }
     
-    func fetch<T: Decodable>(_ type: T.Type, from url: String?, completion: @escaping(Result<T, NetworkError>) -> Void) {
-        guard let url = URL(string: url ?? "") else {
-            completion(.failure(.invalidURL))
-            return
-        }
-        URLSession.shared.dataTask(with: url) { (data, _, error) in
-            guard let data = data else {
-                completion(.failure(.noData))
-                return
-            }
-            do {
-                let type = try JSONDecoder().decode(T.self, from: data)
-                DispatchQueue.main.async {
-                    completion(.success(type))
+    func fetch(from url: String, completion: @escaping(Result<[RandomUser], AFError>) -> Void) {
+        AF.request(url)
+            .validate()
+            .responseJSON { dataResponse in
+                switch dataResponse.result {
+                case .success(let value):
+                    let user = RandomUser.getUser(from: value)
+                    completion(.success(user))
+                case .failure(let error):
+                    completion(.failure(error))
                 }
-            } catch {
-                completion(.failure(.decodingError))
             }
-        }.resume()
     }
 }

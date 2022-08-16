@@ -35,4 +35,16 @@ class UserCell: UITableViewCell {
             }
         }
     }
+    
+    func showSpinner(in view: UITableViewCell) -> UIActivityIndicatorView {
+        let activityIndicator = UIActivityIndicatorView(style: .large)
+        activityIndicator.color = .gray
+        activityIndicator.startAnimating()
+        activityIndicator.center = view.center
+        activityIndicator.hidesWhenStopped = true
+
+        view.addSubview(activityIndicator)
+
+        return activityIndicator
+    }
 }

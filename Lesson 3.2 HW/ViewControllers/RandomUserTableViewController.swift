@@ -5,16 +5,15 @@
 //  Created by Psycho on 08.08.2022.
 //
 
-// Над визуалом и функционалом не успел поработать, был огромный затык с отображением данных и количеством времени. Не знаю проблема была в апи или моих руках xD К следующему уроку обещаю проработать эти моменты)
-
 import UIKit
 
 class RandomUserViewController: UITableViewController {
     
-    private var randomUser: [Results] = []
+    private var randomUser: [RandomUser] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        fetchRandomUser()
         tableView.rowHeight = 500
     }
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -32,18 +31,18 @@ class RandomUserViewController: UITableViewController {
         }
         
         let user = randomUser[indexPath.row]
-        cell.configure(with: user)
-        
+        //cell.configure(with: user.results)
+
         return cell
     }
 }
 
 extension RandomUserViewController {
     func fetchRandomUser() {
-        NetworkManager.shared.fetch(RandomUser.self, from: NetworkManager.url) { [weak self] result in
+        NetworkManager.shared.fetch(from: Link.randomUserApi.rawValue) { [weak self] result in
             switch result {
             case .success(let user):
-                self?.randomUser = user.results
+                self?.randomUser = user
                 self?.tableView.reloadData()
                 print(user)
             case .failure(let error):
