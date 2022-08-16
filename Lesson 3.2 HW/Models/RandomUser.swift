@@ -19,7 +19,16 @@ struct RandomUser: Decodable {
     }
     
     static func getUser(from value: Any) -> [RandomUser] {
-        
+        guard let userData = value as? [[String: Any]] else { return []}
+        var users: [RandomUser] = []
+        for key in userData {
+            let usersArray = key["results"] as? [Results] ?? []
+            for userDictionary in usersArray {
+                let randomResults = RandomUser(userData: userDictionary)
+                users.append(randomResults)
+            }
+        }
+        return users
     }
 }
 
